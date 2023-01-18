@@ -10,7 +10,6 @@ function checkWindow() {
     }
 }
 
-checkWindow();
 
 window.addEventListener('resize', () => {
     checkWindow();
@@ -105,7 +104,8 @@ async function main() {
             getForecastWeather(document.querySelector('.cityName').innerText, e.target.innerText);
         })
     })
-    getForecastWeather('Tokyo', document.querySelector('.day').innerText);
+    await getForecastWeather('Tokyo', document.querySelector('.day').innerText);
+    checkWindow();
 }
 
 main()
