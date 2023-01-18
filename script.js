@@ -4,8 +4,6 @@ document.querySelector('.body').style.backgroundImage = `url('.${bg}')`;
 
 function checkWindow() {
     document.querySelector('.wrapper').classList.remove('h-screen');
-    console.log(window.innerHeight);
-    console.log(document.querySelector('.wrapper').clientHeight)
     if(window.innerHeight > document.querySelector('.wrapper').clientHeight) {
         document.querySelector('.wrapper').classList.add('h-screen');
     }
@@ -105,8 +103,7 @@ async function main() {
     
     await getWeather('Tokyo');
     await getDate('Tokyo');
-    console.log(document.querySelector('.firstDay').childNodes[1].innerText)
-    await getForecastWeather('Tokyo', document.querySelector('.day').childNodes[1].innerText);
+    await getForecastWeather('Tokyo', document.querySelector('.firstDay').childNodes[1].innerText);
     checkWindow();
 }
 
