@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title> 
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer type="module"></script>
+  </head>
+  <body class="bg-no-repeat bg-top text-[#EBEFF2] body">
+    <div id="app">
+      <div class="bg-black/50 wrapper">
+        <div class="sm:flex sm:justify-center">
+          <div class="sm:w-[640px]">
+            <h1 class="text-5xl text-center pt-4 pb-10">Weather</h1>
+            <div class="flex flex-col items-center mb-8">
+              <div class="flex justify-between items-center border-2 border-[#C7D1D9] rounded-lg">
+                <input type="text" class="bg-transparent w-4/6 outline-0 text-center p-1 city" placeholder="City name">
+                <button class="w-2/6 sendCity">SEND</button>
+              </div>
+              <h2 class="text-3xl cityName"></h2>
+            </div>
+            <div class="flex flex-col items-center">
+              <h3 class="text-2xl">Current</h3>
+              <div class="flex items-center">
+                <img alt="weather photo" class="autoValue" id="icon">
+                <h3 class="text-2xl autoValue" id="temp_c">°C</h3>
+              </div>
+              <div class="flex justify-between items-center w-full mb-10">
+                <div class="flex flex-col items-center w-3/12">
+                  <p>Feel temp.</p>
+                  <p class="autoValue" id="feelslike_c">°C</p>
+                </div>
+                <div class="flex flex-col items-center w-3/12">
+                  <p>Pressure</p>
+                  <p class="autoValue" id="pressure_mb">hPa</p>
+                </div>
+                <div class="flex flex-col items-center w-3/12">
+                  <p>Wind</p>
+                  <p class="autoValue" id="wind_kph">km/h</p>
+                </div>
+              </div>
+              <h3 class="text-2xl">Air quality</h3>
+              <div class="mb-10 w-full" id="aqi">
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex flex-col items-center w-3/12">
+                    <p>co</p>
+                    <p class="autoValue" id="co"></p>
+                  </div>
+                  <div class="flex flex-col items-center w-3/12">
+                    <p>o3</p>
+                    <p class="autoValue" id="o3"></p>
+                  </div>
+                  <div class="flex flex-col items-center w-3/12">
+                    <p>no2</p>
+                    <p class="autoValue" id="no2"></p>
+                  </div>
+                </div>
+                <div class="flex justify-between items-center w-full">
+                  <div class="flex flex-col items-center w-3/12">
+                    <p>so2</p>
+                    <p class="autoValue" id="so2"></p>
+                  </div>
+                  <div class="flex flex-col items-center w-3/12">
+                    <p>pm2_5</p>
+                    <p class="autoValue" id="pm2_5"></p>
+                  </div>
+                  <div class="flex flex-col items-center w-3/12">
+                    <p>pm10</p>
+                    <p class="autoValue" id="pm10"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex flex-col items-center">
+              <h3 class="text-2xl">3 days forecast</h3>
+              <div class="flex flex-col items-center w-4/6 my-5">
+                <div class="border-2 border-[#C7D1D9] rounded-t-lg rounded-lg w-full dayChoice transition-all duration-300 delay-100 ease-in-out">
+                  <h3 class="text-2xl text-center p-1">Choose day</h3>
+                </div>
+                <div class="h-0 overflow-hidden w-full transition-all duration-300 delay-100 ease-in-out days">
+                  <div class="w-full border-r-2 border-l-2 day">
+                    <h3 class="text-2xl text-center p-1"></h3>
+                  </div>
+                  <div class="border-2 border-b-0 border-[#C7D1D9] w-full day">
+                    <h3 class="text-2xl text-center p-1"></h3>
+                  </div>
+                  <div class="border-2 border-[#C7D1D9] rounded-b-lg w-full day">
+                    <h3 class="text-2xl text-center p-1"></h3>
+                  </div>
+                </div>
+              </div>
+              <h3 class="text-2xl selectedDate"></h3>
+              <div class="flex items-center">
+                <img alt="weather photo" class="forecastAutoValue" id="forecastIcon">
+                <h3 class="text-2xl forecastAutoValue" id="avgtemp_c">°C</h3>
+              </div>
+              <div class="flex justify-between items-center w-full mb-10">
+                <div class="flex flex-col items-center w-3/12">
+                  <p>Min temp.</p>
+                  <p class="forecastAutoValue" id="mintemp_c">°C</p>
+                </div>
+                <div class="flex flex-col items-center w-3/12">
+                  <p>Visibility</p>
+                  <p class="forecastAutoValue" id="avgvis_km">km</p>
+                </div>
+                <div class="flex flex-col items-center w-3/12">
+                  <p>Wind</p>
+                  <p class="forecastAutoValue" id="maxwind_kph">km/h</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
