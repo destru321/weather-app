@@ -70,7 +70,7 @@ async function getForecastWeather(cityName, date) {
         res.forecast.forecastday.forEach(day => {
             if(day.date == date) {
                 if(value.id == 'forecastIcon') {
-                    value.src = day.day.condition.icon
+                    value.src = day.day.condition.icon;
                 } else {
                     if(value.innerText.includes('°C')) {
                         value.innerText = `${day.day[value.id]} °C`;
