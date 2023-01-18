@@ -3,10 +3,12 @@ import bg from './src/background.jpg';
 document.querySelector('.body').style.backgroundImage = `url('.${bg}')`;
 
 function checkWindow() {
+    console.log(screen.height > document.querySelector('.wrapper').clientHeight)
+    console.log(screen.height);
+    console.log(document.querySelector('.wrapper').clientHeight)
+    document.querySelector('.wrapper').classList.remove('h-screen');
     if(screen.height > document.querySelector('.wrapper').clientHeight) {
         document.querySelector('.wrapper').classList.add('h-screen');
-    } else {
-        document.querySelector('.wrapper').classList.remove('h-screen');
     }
 }
 
