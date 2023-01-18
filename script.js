@@ -4,7 +4,9 @@ document.querySelector('.body').style.backgroundImage = `url('.${bg}')`;
 
 function checkWindow() {
     document.querySelector('.wrapper').classList.remove('h-screen');
-    if(screen.height > document.querySelector('.wrapper').clientHeight) {
+    console.log(window.innerHeight);
+    console.log(document.querySelector('.wrapper').clientHeight)
+    if(window.innerHeight > document.querySelector('.wrapper').clientHeight) {
         document.querySelector('.wrapper').classList.add('h-screen');
     }
 }
