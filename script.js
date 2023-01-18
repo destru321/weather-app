@@ -21,13 +21,13 @@ document.querySelector('.dayChoice').addEventListener('click', (e) => {
     document.querySelector('.days').classList.toggle('h-[125px]');
 })
 
-document.querySelector('.sendCity').addEventListener('click', () => {
+document.querySelector('.sendCity').addEventListener('click', async () => {
     document.querySelector('.days').classList.remove('h-[125px]');
     document.querySelector('.dayChoice').classList.add('rounded-lg');
     let input = document.querySelector('.city');
-    getWeather(input.value);
-    getDate(input.value);
-    getForecastWeather(input.value, document.querySelector('.day').innerText)
+    await getWeather(input.value);
+    await getDate(input.value);
+    await getForecastWeather(input.value, document.querySelector('.firstDay').innerText)
     input.value = '';
 })
 
@@ -105,6 +105,7 @@ async function main() {
     
     await getWeather('Tokyo');
     await getDate('Tokyo');
+    console.log(document.querySelector('.firstDay').childNodes[1].innerText)
     await getForecastWeather('Tokyo', document.querySelector('.day').childNodes[1].innerText);
     checkWindow();
 }
