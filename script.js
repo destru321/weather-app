@@ -105,7 +105,7 @@ async function main() {
     
     await getWeather('Tokyo');
     await getDate('Tokyo');
-    await getForecastWeather('Tokyo', document.querySelector('.day').innerText);
+    await getForecastWeather('Tokyo', document.querySelector('.day').childNodes[1].innerText);
     checkWindow();
 }
 
