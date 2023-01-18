@@ -30,6 +30,13 @@ document.querySelector('.sendCity').addEventListener('click', () => {
     input.value = '';
 })
 
+document.querySelectorAll('.day').forEach(day => {
+    day.addEventListener('click', (e) => {
+        document.querySelector('.dayChoice').classList.toggle('rounded-lg');
+        document.querySelector('.days').classList.toggle('h-[125px]');
+        getForecastWeather(document.querySelector('.cityName').innerText, e.target.innerText);
+    })
+})
 
 async function getWeather(cityName) {
     let weather = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=7f8379f5bddf43e1a8f104330212412&q=${cityName}&days=7&aqi=yes&alerts=no`);
@@ -97,13 +104,6 @@ async function main() {
     
     await getWeather('Tokyo');
     await getDate('Tokyo');
-    document.querySelectorAll('.day').forEach(day => {
-        day.addEventListener('click', (e) => {
-            document.querySelector('.dayChoice').classList.toggle('rounded-lg');
-            document.querySelector('.days').classList.toggle('h-[125px]');
-            getForecastWeather(document.querySelector('.cityName').innerText, e.target.innerText);
-        })
-    })
     await getForecastWeather('Tokyo', document.querySelector('.day').innerText);
     checkWindow();
 }
